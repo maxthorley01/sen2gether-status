@@ -1,31 +1,41 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# .upptimerc.yml for github.com/maxthorley01/sen2gether-status (Upptime).
+# The public status page at https://status.sen2gether.com: GitHub checks each
+# address every 5 minutes from outside our server, opens an issue (and emails
+# the assignees) when one goes down and closes it when it's back. Kept here in
+# SEN2GETHER-WEB (ops/status/) as the source; setup.sh copies it in.
+owner: maxthorley01
+repo: sen2gether-status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: Website
+    url: https://www.sen2gether.com/
+    maxResponseTime: 5000
+  - name: Members' web app
+    url: https://www.sen2gether.com/app/login
+    maxResponseTime: 5000
+  - name: App service (iPhone and Android)
+    url: https://www.sen2gether.com/v5/api/native_app_version.php?platform=ios
+    maxResponseTime: 5000
+  - name: Database
+    url: https://www.sen2gether.com/hub/status.php
+    maxResponseTime: 5000
+  - name: Staff hub
+    url: https://www.sen2gether.com/hub/login
+    maxResponseTime: 5000
+
+assignees:
+  - maxthorley01
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.sen2gether.com
+  name: SEN2gether status
+  logoUrl: https://www.sen2gether.com/2025/assets/logo.png
+  favicon: https://www.sen2gether.com/2025/assets/logo.png
+  introTitle: "SEN2gether status"
+  introMessage: Whether the SEN2gether website and app are working right now, and how they've done recently. Checked every 5 minutes from outside our servers.
+  theme: light
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
-
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+    - title: sen2gether.com
+      href: https://www.sen2gether.com
